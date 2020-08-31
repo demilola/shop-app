@@ -11,12 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
-        accentColor: Colors.limeAccent,
+        accentColor: Colors.tealAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: GoogleFonts.latoTextTheme()
+        textTheme: GoogleFonts.latoTextTheme(),
+        appBarTheme: AppBarTheme(centerTitle: true),
       ),
       home: ProductsOverviewPage(),
     );
