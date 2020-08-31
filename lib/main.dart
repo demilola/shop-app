@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
+        accentColor: Colors.limeAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        // textTheme: GoogleFonts.
+        textTheme: GoogleFonts.latoTextTheme()
       ),
       home: ProductsOverviewPage(),
     );
