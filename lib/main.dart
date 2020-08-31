@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
+      //Here, remember that you can always create a provider for other dataTypes. For example:
+      //Provider<String>(create: (context) => 'This is a string'),
       create: (context) => Products(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
