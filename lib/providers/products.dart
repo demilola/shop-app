@@ -43,6 +43,9 @@ class Products with ChangeNotifier {
   //Since the list is private, it is necessary to have a getter method to access it elsewhere
   List<Product> get items => [..._items];
 
+  Product findByID(String id) =>
+      _items.firstWhere((product) => product.id == id);
+
   // void addProduct(Product product) {
   //   _items.add(product);
   //   notifyListeners();
