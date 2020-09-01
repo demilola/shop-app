@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
-class Product {
+class Product with ChangeNotifier{
+  //Now, since Product uses the ChangeNotifier mixin, it can now notifuy listeners when some properties change
   final String id;
   final String title;
   final String description;
