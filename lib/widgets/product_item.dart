@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/providers/product.dart';
 import 'package:shop_app/widgets/product_details_page.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem(this.product);
-  final Product product;
-
   @override
   Widget build(BuildContext context) {
+    //Now, instead of accepting data from previous pages, we use context to get the datatype whatever
+    final product = Provider.of<Product>(context);
     return ClipRRect(
       borderRadius: BorderRadius.circular(10.0),
       child: GridTile(
