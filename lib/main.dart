@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.indigo,
-          accentColor: Colors.tealAccent,
+          primarySwatch: Colors.cyan,
+          // accentColor: Colors.tealAccent,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: GoogleFonts.latoTextTheme(),
           appBarTheme: AppBarTheme(centerTitle: true),
