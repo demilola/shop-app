@@ -10,7 +10,10 @@ class ProductDetailsPage extends StatelessWidget {
     final String productId =
         ModalRoute.of(context).settings.arguments as String;
     //This method uses the product id gotten as an arg from the previous page as an input for the method defined in the products provider to return a product and subsequently store it in the var
-    final loadedProduct = Provider.of<Products>(context).findByID(productId);
+    final loadedProduct = Provider.of<Products>(
+      context,
+      listen: false,
+    ).findByID(productId);
 
     return Scaffold(
       appBar: AppBar(
