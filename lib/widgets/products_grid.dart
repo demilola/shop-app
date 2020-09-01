@@ -24,8 +24,10 @@ class ProductsGrid extends StatelessWidget {
 
         //To listen to provider of a specific product
         //Since we are now using a provider, it is unnecessary to pass data to the page. Provider will handle that with context
-        ChangeNotifierProvider<Product>(
-          create: (context)=>products[index],
+        //If you dont need the context, use provider.value(as shown below) instead
+        //Use when youre providing data on grid or lists instead
+        ChangeNotifierProvider<Product>.value( //Also, this provider cleans up automatically to free up memory
+          value: products[index],
               child: ProductItem(),
             ));
   }
