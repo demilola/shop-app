@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class Product with ChangeNotifier{
+class Product with ChangeNotifier {
   //Now, since Product uses the ChangeNotifier mixin, it can now notifuy listeners when some properties change
   final String id;
   final String title;
@@ -17,4 +17,9 @@ class Product with ChangeNotifier{
     @required this.imageUrl,
     this.isFavorite = false,
   });
+
+  void toggleFavoriteStatus() {
+    isFavorite = !isFavorite;
+    notifyListeners();
+  }
 }
