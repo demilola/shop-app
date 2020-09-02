@@ -1,6 +1,5 @@
 # Shop App
 
-Basic app.
+## An e-Commerce app
 
-*A code-along with the Flutter Course by Academind*
-**octamonDeux, 2020**
+### A code-along with the Flutter Course by Academind
