@@ -15,9 +15,11 @@ class CartItem {
 }
 
 class Cart with ChangeNotifier {
-  Map<String, CartItem> _items;
+  Map<String, CartItem> _items={};
 
   Map<String, CartItem> get items => {..._items};
+
+  int get itemCount => _items.length;
 
   void addItem(String id, String title, double price) {
     //Check if the item is in the cart already:
@@ -40,5 +42,6 @@ class Cart with ChangeNotifier {
                 price: price,
               ));
     }
+    notifyListeners();
   }
 }
