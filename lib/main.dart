@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/providers/cart.dart';
 import 'package:shop_app/providers/products.dart';
+import 'package:shop_app/screens/cart_page.dart';
 import 'package:shop_app/screens/products_overview_page.dart';
 import 'package:shop_app/screens/product_details_page.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
               appBarTheme: AppBarTheme(centerTitle: true),
             ),
             home: ProductsOverviewPage(),
-            routes: {ProductDetailsPage.id: (context) => ProductDetailsPage()},
+            routes: {ProductDetailsPage.id: (context) => ProductDetailsPage(),CartPage.id:(context)=>CartPage()},
           );
         });
   }

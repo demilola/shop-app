@@ -15,11 +15,16 @@ class CartItem {
 }
 
 class Cart with ChangeNotifier {
-  Map<String, CartItem> _items={};
+  Map<String, CartItem> _items = {};
 
   Map<String, CartItem> get items => {..._items};
 
   int get itemCount => _items.length;
+  double get totalAmount {
+    double total = 0.0;
+    _items.forEach((key, item) => total += item.price*item.quantity);
+    return total;
+  }
 
   void addItem(String id, String title, double price) {
     //Check if the item is in the cart already:
