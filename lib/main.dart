@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
               visualDensity: VisualDensity.adaptivePlatformDensity,
               textTheme: GoogleFonts.latoTextTheme(),
               appBarTheme: AppBarTheme(centerTitle: true),
+              typography: Typography.material2018(),
             ),
             home: ProductsOverviewPage(),
             routes: {ProductDetailsPage.id: (context) => ProductDetailsPage(),CartPage.id:(context)=>CartPage()},
