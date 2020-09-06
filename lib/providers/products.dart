@@ -1,7 +1,31 @@
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-import 'package:shop_app/providers/product.dart';
+
+
+class Product with ChangeNotifier {
+  //Now, since Product uses the ChangeNotifier mixin, it can now notifuy listeners when some properties change
+  final String id;
+  final String title;
+  final String description;
+  final double price;
+  final String imageUrl;
+  bool isFavorite;
+
+  Product({
+    @required this.id,
+    @required this.title,
+    @required this.description,
+    @required this.price,
+    @required this.imageUrl,
+    this.isFavorite = false,
+  });
+
+  void toggleFavoriteStatus() {
+    isFavorite = !isFavorite;
+    notifyListeners();
+  }
+}
+
 
 class Products with ChangeNotifier {
   //This list will hold all the products. It is a private list
