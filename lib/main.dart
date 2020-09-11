@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/providers/cart.dart';
+import 'package:shop_app/providers/orders.dart';
 import 'package:shop_app/providers/products.dart';
 import 'package:shop_app/screens/cart_page.dart';
 import 'package:shop_app/screens/products_overview_page.dart';
@@ -18,8 +19,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider<Products>(create: (context) => Products()),
-          ChangeNotifierProvider<Cart>(create: (context)=>Cart())
-        ], 
+          ChangeNotifierProvider<Cart>(create: (context) => Cart()),
+          ChangeNotifierProvider<Orders>(create: (context) => Orders())
+        ],
         //remember that you can always create a provider for other dataTypes. For example:
         //Provider<String>(create: (context) => 'This is a string'),
         builder: (context, child) {
@@ -35,7 +37,10 @@ class MyApp extends StatelessWidget {
               typography: Typography.material2018(),
             ),
             home: ProductsOverviewPage(),
-            routes: {ProductDetailsPage.id: (context) => ProductDetailsPage(),CartPage.id:(context)=>CartPage()},
+            routes: {
+              ProductDetailsPage.id: (context) => ProductDetailsPage(),
+              CartPage.id: (context) => CartPage()
+            },
           );
         });
   }
