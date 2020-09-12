@@ -18,6 +18,7 @@ class OrderItem {
 class Orders with ChangeNotifier {
   List<OrderItem> _orders = [];
   List<OrderItem> get orders => [..._orders];
+  int get numberOfOrders => _orders.length;
 
   void addOrder(List<CartItem> cartProducts, double total) {
     _orders.insert(
@@ -29,5 +30,4 @@ class Orders with ChangeNotifier {
             dateTime: DateTime.now()));
     notifyListeners();
   }
-
 }
