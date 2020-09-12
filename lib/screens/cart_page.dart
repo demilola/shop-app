@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 //To show only the relevant part to avoid clashes
 import 'package:shop_app/providers/cart.dart' show Cart;
+import 'package:shop_app/providers/orders.dart';
 //Alternatively, you can add 'as foo' to the second import and use it as a prefix to calling the item you need: foo.itemYouNeed;
 import 'package:shop_app/widgets/cart_item.dart';
 
@@ -35,7 +36,15 @@ class CartPage extends StatelessWidget {
                     label: Text('\$${cart.totalAmount}'),
                     backgroundColor: theme.primaryColor,
                   ),
-                  FlatButton(onPressed: () {}, child: Text('Place Order'))
+                  FlatButton(
+                      onPressed: () {
+                        Provider.of<Orders>(context, listen: false).addOrder(
+                          cart.items.values.toList(),
+                          cart.totalAmount,
+                        );
+                        cart.clearCart();
+                      },
+                      child: Text('Place Order'))
                 ],
               ),
             ),
@@ -52,7 +61,7 @@ class CartPage extends StatelessWidget {
                     price: item.price,
                     quantity: item.quantity,
                     title: item.title,
-                    productId:cart.items.keys.toList()[index],
+                    productId: cart.items.keys.toList()[index],
                   );
                 }),
           ),
