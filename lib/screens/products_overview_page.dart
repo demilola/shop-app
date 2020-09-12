@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop_app/providers/cart.dart';
 import 'package:shop_app/screens/cart_page.dart';
 import 'package:shop_app/widgets/badge.dart';
+import 'package:shop_app/widgets/main_drawer.dart';
 import 'package:shop_app/widgets/products_grid.dart';
 
 enum FilterOptions { Favorites, All }
@@ -54,7 +55,7 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
                   onPressed: () =>Navigator.pushNamed(context, CartPage.id)
                 ))
           ],
-        ),
+        ),drawer: MainDrawer(),
         //The bool set by selecting differnt options in the popupmenu is passed to the next page
         body: ProductsGrid(_showOnlyFavorites));
   }
