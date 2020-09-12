@@ -23,7 +23,7 @@ class OrderItem extends StatelessWidget {
               child: Text(index.toString()),
             ),
             title: Text(
-              '\$${order.amount}',
+              '\$${order.amount.toStringAsFixed(2)}',
               style: Theme.of(context).textTheme.subtitle2,
             ),
             subtitle: Text(

@@ -33,7 +33,7 @@ class CartPage extends StatelessWidget {
                   ),
                   Spacer(),
                   Chip(
-                    label: Text('\$${cart.totalAmount}'),
+                    label: Text('\$${cart.totalAmount.toStringAsFixed(2)}'),
                     backgroundColor: theme.primaryColor,
                   ),
                   FlatButton(
