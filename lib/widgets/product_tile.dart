@@ -62,6 +62,10 @@ class ProductTile extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
                   duration: Duration(seconds: 2),
+                  action: SnackBarAction(
+                    label: 'Undo',
+                    onPressed: () => cart.removeSingleItem(product.id),
+                  ),
                 ),
               );
             },

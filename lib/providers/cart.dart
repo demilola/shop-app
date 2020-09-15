@@ -49,13 +49,42 @@ class Cart with ChangeNotifier {
     }
     notifyListeners();
   }
-///Removes item with passed product id
+
+  ///Removes item with passed product id
   void removeItem(String productId) {
     _items.remove(productId);
     notifyListeners();
   }
 
-///Clears the cart
+  ///Removes a single item from cart
+  void removeSingleItem(String productId) {
+    //If the item isn't on the list, do nothing
+    if (!_items.containsKey(productId)) {
+      return;
+    }
+
+    //If there's more than 1 of the item on the list, reduce by 1
+    if (_items[productId].quantity > 1) {
+      _items.update(
+        productId,
+        (item) => CartItem(
+          id: item.id,
+          title: item.title,
+          price: item.price,
+          quantity: item.quantity - 1,
+        ),
+      );
+    }
+
+    //If there's only 1 of the item on the list, remove it
+    else {
+      _items.remove(productId);
+    }
+    notifyListeners();
+  }
+
+
+  ///Clears the cart
   void clearCart() {
     _items.clear();
     notifyListeners();
