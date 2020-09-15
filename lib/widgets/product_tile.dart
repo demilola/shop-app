@@ -41,17 +41,33 @@ class ProductTile extends StatelessWidget {
             ),
           ),
           trailing: IconButton(
-                icon: Icon(
-                  Icons.shopping_cart_outlined,
-                  color: Theme.of(context).accentColor,
+            icon: Icon(
+              Icons.shopping_cart_outlined,
+              color: Theme.of(context).accentColor,
+            ),
+            onPressed: () {
+              cart.addItem(
+                product.id,
+                product.title,
+                product.price,
+              );
+              Scaffold.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    'Item added to cart!',
+                    textAlign: TextAlign.center,
+                  ),
+                  backgroundColor: Theme.of(context).primaryColorDark,
+                  behavior: SnackBarBehavior.floating,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                  duration: Duration(seconds: 2),
                 ),
-                onPressed: () => cart.addItem(
-                      product.id,
-                      product.title,
-                      product.price,
-                    )),
+              );
+            },
           ),
         ),
+      ),
     );
   }
 }
