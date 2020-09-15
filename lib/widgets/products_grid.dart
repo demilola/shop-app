@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/providers/products.dart';
-import 'package:shop_app/widgets/product_item.dart';
+import 'package:shop_app/widgets/product_tile.dart';
 
 class ProductsGrid extends StatelessWidget {
   //This bool is received to let the app know whether or not to show only favorite items
@@ -27,7 +27,6 @@ class ProductsGrid extends StatelessWidget {
             mainAxisSpacing: 8.0),
         itemCount: products.length,
         itemBuilder: (context, index) =>
-
             //To listen to provider of a specific product
             //Since we are now using a provider, it is unnecessary to pass data to the page. Provider will handle that with context
             //If you dont need the context, use provider.value(as shown below) instead
@@ -35,7 +34,7 @@ class ProductsGrid extends StatelessWidget {
             ChangeNotifierProvider<Product>.value(
               //Also, this provider cleans up automatically to free up memory
               value: products[index],
-              child: ProductItem(),
+              child: ProductTile(),
             ));
   }
 }

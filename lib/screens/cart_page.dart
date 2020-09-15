@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-//To show only the relevant part to avoid clashes
-import 'package:shop_app/providers/cart.dart' show Cart;
+// //To show only the relevant part to avoid clashes
+// import 'package:shop_app/providers/cart.dart' show Cart;
+import 'package:shop_app/providers/cart.dart';
 import 'package:shop_app/providers/orders.dart';
-//Alternatively, you can add 'as foo' to the second import and use it as a prefix to calling the item you need: foo.itemYouNeed;
-import 'package:shop_app/widgets/cart_item.dart';
+// Alternatively, you can add 'as foo' to the second import and use it as a prefix to calling the item you need: foo.itemYouNeed;
+import 'package:shop_app/widgets/cart_tile.dart';
 
 class CartPage extends StatelessWidget {
   static const String id = '/cart';
@@ -56,7 +57,7 @@ class CartPage extends StatelessWidget {
                   //.values to access values in map
                   //.toList to turn iterable to a usable list
                   final item = cart.items.values.toList()[index];
-                  return CartItem(
+                  return CartTile(
                     id: item.id,
                     price: item.price,
                     quantity: item.quantity,

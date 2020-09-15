@@ -45,17 +45,17 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
                       )
                     ]),
             Consumer<Cart>(
-              //The third parameter (pikin) doesnt listen to changes
+                //The third parameter (pikin) doesnt listen to changes
                 builder: (_, cart, pikin) => Badge(
                       child: pikin,
                       value: cart.itemCount.toString(),
                     ),
                 child: IconButton(
-                  icon: Icon(Icons.shopping_cart),
-                  onPressed: () =>Navigator.pushNamed(context, CartPage.id)
-                ))
+                    icon: Icon(Icons.shopping_cart),
+                    onPressed: () => Navigator.pushNamed(context, CartPage.id)))
           ],
-        ),drawer: MainDrawer(),
+        ),
+        drawer: MainDrawer(),
         //The bool set by selecting differnt options in the popupmenu is passed to the next page
         body: ProductsGrid(_showOnlyFavorites));
   }

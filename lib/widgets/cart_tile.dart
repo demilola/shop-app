@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/providers/cart.dart';
 
-class CartItem extends StatelessWidget {
-  const CartItem(
+class CartTile extends StatelessWidget {
+  const CartTile(
       {Key key, this.id, this.price, this.quantity, this.title, this.productId})
       : super(key: key);
   final String id;

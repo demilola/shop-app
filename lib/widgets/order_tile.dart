@@ -1,20 +1,20 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:shop_app/providers/orders.dart' as op;
+import 'package:shop_app/providers/orders.dart';
 import 'package:intl/intl.dart';
 
-class OrderItem extends StatefulWidget {
-  final op.OrderItem order;
+class OrderTile extends StatefulWidget {
+  final OrderItem order;
   final int index;
 
-  const OrderItem(this.index, this.order, {Key key}) : super(key: key);
+  const OrderTile(this.index, this.order, {Key key}) : super(key: key);
 
   @override
-  _OrderItemState createState() => _OrderItemState();
+  _OrderTileState createState() => _OrderTileState();
 }
 
-class _OrderItemState extends State<OrderItem> {
+class _OrderTileState extends State<OrderTile> {
   bool _expanded = false;
   @override
   Widget build(BuildContext context) {

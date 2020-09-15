@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/providers/orders.dart' hide OrderItem;
-import 'package:shop_app/screens/order_item.dart';
+import 'package:shop_app/providers/orders.dart';
+import 'package:shop_app/widgets/order_tile.dart';
 import 'package:shop_app/widgets/main_drawer.dart';
 
 class OrdersPage extends StatelessWidget {
@@ -18,8 +18,10 @@ class OrdersPage extends StatelessWidget {
       drawer: MainDrawer(),
       body: ListView.builder(
         itemCount: orderData.numberOfOrders,
-        itemBuilder: (context, index) => OrderItem(
-            orderData.numberOfOrders - index, orderData.orders[index]),
+        itemBuilder: (context, index) => OrderTile(
+          orderData.numberOfOrders - index,
+          orderData.orders[index],
+        ),
       ),
     );
   }
