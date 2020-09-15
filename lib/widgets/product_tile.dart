@@ -51,11 +51,11 @@ class ProductTile extends StatelessWidget {
                 product.title,
                 product.price,
               );
+              Scaffold.of(context).hideCurrentSnackBar();
               Scaffold.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
                     'Item added to cart!',
-                    textAlign: TextAlign.center,
                   ),
                   backgroundColor: Theme.of(context).primaryColorDark,
                   behavior: SnackBarBehavior.floating,
