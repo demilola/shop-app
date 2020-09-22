@@ -25,13 +25,33 @@ class CartTile extends StatelessWidget {
         alignment: Alignment(0.9, 0.0),
         child: Icon(Icons.delete, size: 25.0),
       ),
+      confirmDismiss: (direction) {
+        return showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            // title: Text('Are yo sure?'),
+            content: Text('Are you sure you want to delete this item?'),
+            actions: [
+              TextButton(
+                child: Text('No'),
+                onPressed: () => Navigator.pop(context, false),
+              ),
+              TextButton(
+                child: Text('Yes'),
+                onPressed: () => Navigator.pop(context, true),
+              )
+            ],
+          ),
+        );
+      },
       onDismissed: (direction) {
         Provider.of<Cart>(context, listen: false).removeItem(productId);
         Scaffold.of(context).showSnackBar(
           SnackBar(
             content: Text("$title removed from Cart"),
             duration: Duration(seconds: 1),
-            backgroundColor:Theme.of(context).errorColor ,
+            backgroundColor: Theme.of(context).errorColor,
+            behavior: SnackBarBehavior.floating,
           ),
         );
       },
