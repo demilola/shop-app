@@ -4,7 +4,7 @@ import 'package:shop_app/providers/cart.dart';
 import 'package:shop_app/providers/products.dart';
 import 'package:shop_app/screens/product_details_page.dart';
 
-class ProductTile extends StatelessWidget {
+class ProductGridTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Now, instead of accepting data from previous pages, we use context to get the datatype whatever

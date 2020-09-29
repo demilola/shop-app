@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/providers/products.dart';
-import 'package:shop_app/widgets/product_tile.dart';
+import 'package:shop_app/widgets/product_grid_tile.dart';
 
 class ProductsGrid extends StatelessWidget {
   //This bool is received to let the app know whether or not to show only favorite items
@@ -34,7 +34,7 @@ class ProductsGrid extends StatelessWidget {
             ChangeNotifierProvider<Product>.value(
               //Also, this provider cleans up automatically to free up memory
               value: products[index],
-              child: ProductTile(),
+              child: ProductGridTile(),
             ));
   }
 }
